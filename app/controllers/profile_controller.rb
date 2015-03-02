@@ -5,11 +5,13 @@ class ProfileController < ApplicationController
   # end
 
   def index
-    profile_url = "https://api.github.com/users/jesseract"
+    profile_url = "https://api.github.com/users/jesseract/repos"
     @profile = HTTParty.get(profile_url, login_info)
 
     avatar_url = "https://api.github.com/users/jesseract"
     @avatar = HTTParty.get(avatar_url, login_info)["avatar_url"]
+
+
 
   end
 
