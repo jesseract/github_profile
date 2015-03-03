@@ -1,7 +1,37 @@
 <h1>Profile#index</h1>
-<%= image_tag @avatar %>
+<%= image_tag @avatar, size: "230" %>
 <ul>
   <% @profile.each do |repo| %>
-    <li><%= repo["name"] %></li>
+
+
+
+    <li class="repo-list-item public source">
+  <div class="repo-list-stats">
+      Ruby
+    <%= link_to repo["html_url"] + "/stargazers", class: "repo-list-stat-item tooltipped tooltipped-s" do %>
+    <span class="octicon octicon-star"></span>
+    <%= repo["stargazers_count"] %>
+  <% end %>
+    <a class="repo-list-stat-item tooltipped tooltipped-s" href="/jesseract/github_profile/network"  aria-label="Forks">
+      <span class="octicon octicon-git-branch"></span>
+      0
+    </a>
+  </div>
+
+  <h3 class="repo-list-name">
+    <%= link_to repo["name"], repo["html_url"] %>
+  </h3>
+
+
+
+  <p class="repo-list-meta">
+      Updated <time datetime="2015-03-02T21:57:32Z" is="relative-time">Mar 2, 2015</time>
+  </p>
+
+  <div class="participation-graph">
+    <poll-include-fragment src="/jesseract/github_profile/graphs/participation?h=80&amp;w=640"></poll-include-fragment>
+  </div>
+</li>
+
   <% end %>
 </ul>

@@ -10,9 +10,6 @@ class ProfileController < ApplicationController
 
     avatar_url = "https://api.github.com/users/jesseract"
     @avatar = HTTParty.get(avatar_url, login_info)["avatar_url"]
-
-
-
   end
 
   private def login_info
