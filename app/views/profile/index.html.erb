@@ -1,37 +1,251 @@
-<h1>Profile#index</h1>
-<%= image_tag @avatar, size: "230" %>
-<ul>
-  <% @profile.each do |repo| %>
+<h1>Github Assignment</h1>
+
+  <div class="wrapper">
+        <div class="header header-logged-in true" role="banner">
+    <div class="container clearfix">
+
+      <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+    <span class="mega-octicon octicon-mark-github"></span>
+  </a>
+
+
+        <div class="site-search  js-site-search" role="search">
+            <form accept-charset="UTF-8" action="/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+    <input type="text" class="" data-hotkey="s" name="q" placeholder="Search GitHub" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+    <div class="scope-badge">This repository</div>
+  </form>
+        </div>
+        <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item explore">
+            <a class="header-nav-link" href="/explore" data-ga-click="Header, go to explore, text:explore">Explore</a>
+          </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="https://gist.github.com" data-ga-click="Header, go to gist, text:gist">Gist</a>
+            </li>
+            <li class="header-nav-item">
+              <a class="header-nav-link" href="/blog" data-ga-click="Header, go to blog, text:blog">Blog</a>
+            </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
+          </li>
+        </ul>
+
+
+  <ul class="header-nav user-nav right" id="user-links">
+    <li class="header-nav-item dropdown js-menu-container">
+      <a class="header-nav-link name" href="/jesseract" data-ga-click="Header, go to profile, text:username">
+        <img alt="Jessica Pearce" class="avatar" data-user="10173258" height="20" src="https://avatars2.githubusercontent.com/u/10173258?v=3&amp;s=40" width="20">
+        <span class="css-truncate">
+          <span class="css-truncate-target">jesseract</span>
+        </span>
+      </a>
+    </li>
+
+    <li class="header-nav-item dropdown js-menu-container">
+      <a class="header-nav-link js-menu-target tooltipped tooltipped-s" href="#" aria-label="Create new..." data-ga-click="Header, create new, icon:add">
+        <span class="octicon octicon-plus"></span>
+        <span class="dropdown-caret"></span>
+      </a>
+
+      <div class="dropdown-menu-content js-menu-content">
+
+  <ul class="dropdown-menu">
+    <li>
+      <a href="/new" data-ga-click="Header, create new repository, icon:repo"><span class="octicon octicon-repo"></span> New repository</a>
+    </li>
+    <li>
+      <a href="/organizations/new" data-ga-click="Header, create new organization, icon:organization"><span class="octicon octicon-organization"></span> New organization</a>
+    </li>
+
+
+  </ul>
+
+      </div>
+    </li>
+
+    <li class="header-nav-item">
+          <a href="/notifications" aria-label="You have no unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s" data-ga-click="Header, go to notifications, icon:read" data-hotkey="g n">
+          <span class="mail-status all-read"></span>
+          <span class="octicon octicon-inbox"></span>
+  </a>
+    </li>
+
+    <li class="header-nav-item">
+      <a class="header-nav-link tooltipped tooltipped-s" href="/settings/profile" id="account_settings" aria-label="Settings" data-ga-click="Header, go to settings, icon:settings">
+        <span class="octicon octicon-gear"></span>
+      </a>
+    </li>
+
+    <li class="header-nav-item">
+      <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="qmApQxsfbIWRved0yCOtjIljO1j4gOamc3NVkEcc51+7pkJ1Sv/7t8FDySUqCX+hRMZulREGuvan4WAPeIvxKw=="></div>
+        <button class="header-nav-link sign-out-button tooltipped tooltipped-s" aria-label="Sign out" data-ga-click="Header, sign out, icon:logout">
+          <span class="octicon octicon-sign-out"></span>
+        </button>
+  </form>  </li>
+
+  </ul>
 
 
 
-    <li class="repo-list-item public source">
-  <div class="repo-list-stats">
-      Ruby
-    <%= link_to repo["html_url"] + "/stargazers", class: "repo-list-stat-item tooltipped tooltipped-s" do %>
-    <span class="octicon octicon-star"></span>
-    <%= repo["stargazers_count"] %>
-  <% end %>
-    <a class="repo-list-stat-item tooltipped tooltipped-s" href="/jesseract/github_profile/network"  aria-label="Forks">
-      <span class="octicon octicon-git-branch"></span>
-      0
-    </a>
+    </div>
   </div>
 
-  <h3 class="repo-list-name">
-    <%= link_to repo["name"], repo["html_url"] %>
-  </h3>
 
 
 
-  <p class="repo-list-meta">
-      Updated <time datetime="2015-03-02T21:57:32Z" is="relative-time">Mar 2, 2015</time>
-  </p>
 
-  <div class="participation-graph">
-    <poll-include-fragment src="/jesseract/github_profile/graphs/participation?h=80&amp;w=640"></poll-include-fragment>
+
+        <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site clearfix" role="main">
+
+            <div id="site-container" class="context-loader-container" data-pjax-container="">
+
+
+
+  <div class="container">
+    <div class="columns profilecols js-username" data-name="jesseract">
+      <div class="column one-fourth vcard" itemscope="" itemtype="http://schema.org/Person">
+          <a href="/account" aria-label="Change your avatar" class="vcard-avatar tooltipped tooltipped-s"><img alt="" class="avatar" data-user="10173258" height="230" src="https://avatars1.githubusercontent.com/u/10173258?v=3&amp;s=460" width="230"></a>
+
+        <h1 class="vcard-names">
+    <span class="vcard-fullname" itemprop="name">Jessica Pearce</span>
+    <span class="vcard-username" itemprop="additionalName">jesseract</span>
+  </h1>
+
+
+
+  <ul class="vcard-details">
+
+
+    <li class="vcard-detail" itemprop="homeLocation"><span class="octicon octicon-location"></span>Durham, NC</li>
+
+    <li class="vcard-detail"><span class="octicon octicon-clock"></span><span class="join-label">Joined on </span><time class="join-date" datetime="2014-12-13T04:30:00Z" day="numeric" is="local-time" month="short" year="numeric" title="Dec 12, 2014, 11:30 PM EST">Dec 12, 2014</time></li>
+  </ul>
+
+
+        <div class="vcard-stats">
+          <a class="vcard-stat" href="/jesseract/followers">
+            <strong class="vcard-stat-count">8</strong>
+            <span class="text-muted">Followers</span>
+          </a>
+          <a class="vcard-stat" href="/stars">
+            <strong class="vcard-stat-count">0</strong>
+            <span class="text-muted">Starred</span>
+          </a>
+          <a class="vcard-stat" href="/jesseract/following">
+            <strong class="vcard-stat-count">4</strong>
+            <span class="text-muted">Following</span>
+          </a>
+        </div>
+
+          <div class="clearfix">
+            <h3>Organizations</h3>
+              <a href="/TIY-Thomas-and-Jess" aria-label="TIY-Thomas-and-Jess" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="TIY-Thomas-and-Jess" class="avatar" data-user="10672360" height="42" src="https://avatars2.githubusercontent.com/u/10672360?v=3&amp;s=84" width="42"></a>
+              <a href="/PeacockPals" aria-label="PeacockPals" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="PeacockPals" class="avatar" data-user="10762116" height="42" src="https://avatars3.githubusercontent.com/u/10762116?v=3&amp;s=84" width="42"></a>
+              <a href="/Jessley" aria-label="Jessley" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="Jessley" class="avatar" data-user="10870437" height="42" src="https://avatars0.githubusercontent.com/u/10870437?v=3&amp;s=84" width="42"></a>
+              <a href="/PossumAwesome" aria-label="PossumAwesome" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="PossumAwesome" class="avatar" data-user="10964627" height="42" src="https://avatars3.githubusercontent.com/u/10964627?v=3&amp;s=84" width="42"></a>
+              <a href="/jp-squared" aria-label="jp-squared" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="jp-squared" class="avatar" data-user="11091544" height="42" src="https://avatars0.githubusercontent.com/u/11091544?v=3&amp;s=84" width="42"></a>
+              <a href="/TIY-Short-Feedback-Cycles" aria-label="TIY-Short-Feedback-Cycles" class="tooltipped tooltipped-n  avatar-group-item" itemprop="follows"><img alt="TIY-Short-Feedback-Cycles" class="avatar" data-user="11218752" height="42" src="https://avatars3.githubusercontent.com/u/11218752?v=3&amp;s=84" width="42"></a>
+          </div>
+      </div>
+
+      <div class="column three-fourths">
+
+
+        <div class="tabnav">
+            <div class="tabnav-right">
+                  <a href="/account" class="minibutton tabnav-widget">
+                    <span class="octicon octicon-pencil"></span>
+                    Edit profile
+                  </a>
+            </div>
+
+          <ul class="tabnav-tabs" data-pjax="" role="navigation">
+            <li data-tab="contributions">
+              <a href="/jesseract" class="tabnav-tab ">
+                <span class="octicon octicon-diff-added"></span>
+                Contributions
+              </a>
+            </li>
+            <li data-tab="repo">
+              <a href="/jesseract?tab=repositories" class="tabnav-tab selected">
+                <span class="octicon octicon-repo"></span>
+                Repositories
+              </a>
+            </li>
+            <li data-tab="activity">
+              <a href="/jesseract?tab=activity" class="tabnav-tab ">
+                <span class="octicon octicon-rss"></span>
+                Public activity
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-content js-repo-filter">
+
+    <div class="repo-tab">
+      <div class="filter-bar">
+          <a href="/new" class="button primary new-repo">
+            <span class="octicon octicon-repo"></span>
+            New
+  </a>      <ul class="repo_filterer">
+            <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".mirror">Mirrors</a></li>
+          <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".fork">Forks</a></li>
+          <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".source">Sources</a></li>
+            <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".private">Private</a></li>
+            <li><a href="#" class="repo_filter js-repo-filter-tab" data-filter=".public">Public</a></li>
+          <li class="all_repos"><a href="#" class="repo_filter js-repo-filter-tab filter-selected" data-filter=".public, .private">All</a></li>
+        </ul>
+
+        <form action="/search" class="repo-search" role="search">
+          <input type="hidden" name="user" value="jesseract">
+          <input type="text" id="your-repos-filter" name="q" class="filter_input js-filterable-field" placeholder="Find a repository…" tabindex="2">
+          <input type="submit" value="Search" class="button">
+        </form>
+      </div>
+
+        <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
+      <% @profile.each do |repo| %>
+      <li class="repo-list-item public source">
+    <div class="repo-list-stats">
+        Ruby
+      <%= link_to repo["html_url"] + "/stargazers", class: "repo-list-stat-item tooltipped tooltipped-s" do %>
+      <span class="octicon octicon-star"></span>
+      <%= repo["stargazers_count"] %>
+    <% end %>
+      <a class="repo-list-stat-item tooltipped tooltipped-s" href="/jesseract/github_profile/network"  aria-label="Forks">
+        <span class="octicon octicon-git-branch"></span>
+        0
+      </a>
+    </div>
+
+    <h3 class="repo-list-name">
+      <%= link_to repo["name"], repo["html_url"] %>
+    </h3>
+
+
+    <p class="repo-list-meta">
+        Updated <time datetime="2015-03-02T21:57:32Z" is="relative-time" title="Mar 2, 2015, 4:57 PM EST">5 hours ago</time>
+    </p>
+
+    <div class="participation-graph">
+      <svg class="bars" width="640" height="80">
+  </svg>
+
+    </div>
+  </li><% end %>
+  </ul>
+
+    </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
-</li>
 
-  <% end %>
-</ul>
+            </div>
+            <div class="modal-backdrop"></div>
+          </div>
+      </div>
